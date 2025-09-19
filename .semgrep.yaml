@@ -1,0 +1,57 @@
+repos: 
+# Basic Hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: main
+    hooks:
+      - id: check-merge-conflict 
+      - id: check-yaml
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+# Terraform specific
+  - repo: https://github.com/antonbabenko/pre-commit-terraform.git
+    rev: v1.90.0
+    hooks:
+      - id: terraform_fmt
+        args: [--recursive] # Recursively checks all files in the directory
+        files: ^terraform/.*\.tf$ 
+      - id: terraform_validate # Removes ANSI colors, 
+        args: [--no-color]
+        files: ^terraform/
+
+
+# TFLint
+  - repo: https://github.com/antonbabenko/pre-commit-terraform.git
+    rev: v1.90.0
+    hooks:
+        - id: terraform_tflint
+          args: [--args=--disable-rule=terraform_comment_syntax] # disabled comment syntax rule for ('#', '-')
+          files: ^terraform/
+
+# Semgrep
+  - repo: https://github.com/semgrep/semgrep.git
+    rev: v1.92.0
+    hooks:
+      - id: semgrep
+        args: [--config, p/ci, --error] # Runs default configuration and blocks commit if failed.
+        all_files: false # Only checks staged files
+
+# Gitleaks
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+        args: [detect, --no-git, --redact] # Scan the working tree, redact secrets in output
+        pass_filenames: false # Only checks staged files
+        files: ^terraform/ # Only checks terraform files
+        stages: [commit] # Runs gitleaks on commit stage
+        
+# Checkov
+  - repo: https://github.com/bridgecrewio/checkov
+    rev:  3.2.257
+    hooks:
+      - id: checkov
+        args: [--no-color, quite] # Removes ANSI colors 
+        files: ^terraform/
+      
