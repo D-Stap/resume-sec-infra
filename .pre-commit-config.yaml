@@ -36,6 +36,15 @@ repos:
 
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.18.4
+
+  #  Gitleaks (secrets) 
+
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.4
+
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.30.0
+
     hooks:
       - id: gitleaks
         args: [detect, --redact]
