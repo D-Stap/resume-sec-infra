@@ -1,7 +1,7 @@
 repos:
-  # Basic Hygiene 
+  # Basic Hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev:  v4.6.0                       
+    rev:  v4.6.0
     hooks:
       - id: check-merge-conflict
       - id: check-yaml
@@ -9,22 +9,22 @@ repos:
       - id: end-of-file-fixer
       - id: trailing-whitespace
 
-  #  Terraform (fmt/validate + optional tflint) 
+  #  Terraform (fmt/validate + optional tflint)
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.90.0
     hooks:
       - id: terraform_fmt
-        args: [--recursive] # Recursively checks all files in the directory
+        args: [-recursive] # Recursively checks all files in the directory
         files: ^terraform/ # Only checks terraform files
       - id: terraform_validate # Removes ANSI colors
-        args: [--no-color]
+        args: [-no-color]
         files: ^terraform/
-      
+
       - id: terraform_tflint
         args: [--args=--disable-rule=terraform_comment_syntax]
         files: ^terraform/
 
-  #  Semgrep (SAST) 
+  #  Semgrep (SAST)
   - repo: https://github.com/returntocorp/semgrep
     rev: v1.92.0
     hooks:
@@ -32,23 +32,20 @@ repos:
         args: [--config, p/ci, --error, --timeout, "120"] # Runs default configuration and blocks commit if failed. timesout after 120s
         pass_filenames: true          # scan only staged files
 
-  #  Gitleaks (secrets) 
+  #  Gitleaks (secrets)
 
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.18.4
-
-  - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.30.0
-
     hooks:
       - id: gitleaks
-        args: [detect, --no-git, --redact]
-        pass_filenames: false         # scan the working tree 
+        args: [detect, --redact]
+        pass_filenames: false         # scan the working tree
 
-  #  Checkov (Terraform security) 
+  #  Checkov (Terraform security)
   - repo: https://github.com/bridgecrewio/checkov
     rev: 3.2.257
     hooks:
       - id: checkov
         args: [-d, terraform, --quiet]
         pass_filenames: false
+        language_version: python3.11
