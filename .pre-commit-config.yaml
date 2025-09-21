@@ -14,10 +14,10 @@ repos:
     rev: v1.90.0
     hooks:
       - id: terraform_fmt
-        args: [-recursive] # Recursively checks all files in the directory
+        args: [--args=-recursive] # Recursively checks all files in the directory
         files: ^terraform/ # Only checks terraform files
       - id: terraform_validate # Removes ANSI colors
-        args: [-no-color]
+        args: [--args=-no-color]
         files: ^terraform/
 
       - id: terraform_tflint
