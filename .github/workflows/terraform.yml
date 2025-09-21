@@ -17,6 +17,7 @@ jobs:
 
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
+        working-directory: terraform
 
   terraform-validate:
     runs-on: ubuntu-latest
@@ -29,9 +30,11 @@ jobs:
 
       - name: Terraform Init # This is usesd to initialize the working directory containing Terraform configuration files.
         run: terraform init
+        working-directory: terraform
 
       - name: Terraform Validate # This checks the syntax and internal consistency of the configuration files.
         run: terraform validate
+        working-directory: terraform
 
   terraform-plan:
     runs-on: ubuntu-latest
@@ -44,9 +47,11 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: terraform
 
       - name: Terraform Plan # This will show what changes would be made.
         run: terraform plan
+        working-directory: terraform
 
   terraform-apply:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' # Only run on pushes to main branch
@@ -62,6 +67,9 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: terraform
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve      # After PR is reviewed and merged, this will apply the changes.
+        run: terraform apply -auto-approve
+        working-directory: terraform
+            # After PR is reviewed and merged, this will apply the changes.
