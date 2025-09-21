@@ -1,0 +1,56 @@
+# These are Semgrep rules for scanning Terraform and HTML files for common security issues.
+rules:
+  # Checks S3 bucket is not be public
+  - id: aws-s3-public-read
+    patterns:
+      - pattern: 'acl = "public-read"'
+    message: "S3 bucket should not have public-read ACL."
+    languages: [terraform]
+    severity: ERROR
+
+  # Checks S3 bucket is not public (public-read-write)
+  - id: aws-s3-public-read-write
+    patterns:
+      - pattern: 'acl = "public-read-write"'
+    message: "S3 bucket should not have public-read-write ACL."
+    languages: [terraform]
+    severity: ERROR
+
+  # Checks IAM policy is not allow wildcard actions
+  - id: aws-iam-policy-wildcard-action
+    pattern: |
+      action = "*"
+    message: "IAM policy should not allow all actions ('*')."
+    languages: [terraform]
+    severity: ERROR
+
+  # Checks IAM policy is not allow wildcard resources
+  - id: aws-iam-policy-wildcard-resource
+    pattern: |
+      resource = "*"
+    message: "IAM policy should not allow all resources ('*')."
+    languages: [terraform]
+    severity: ERROR
+
+  # Checks for hardcoded AWS secrets in Terraform
+  - id: aws-hardcoded-secret
+    pattern: |
+      aws_secret_access_key = $SECRET
+    message: "Avoid hardcoded AWS secrets in Terraform code."
+    languages: [terraform]
+    severity: ERROR
+
+  # Check for use of default VPC
+  - id: aws-default-vpc
+    pattern: |
+      vpc_id = "default"
+    message: "Avoid using the default VPC."
+    languages: [terraform]
+    severity: WARNING
+
+  # Checks use of inline JavaScript in HTML (basic regex match)
+  - id: html-inline-script
+    pattern-regex: '<script[\s>]' # Matches <script> or <script ...>
+    message: "Avoid inline <script> tags in HTML."
+    languages: [html]
+    severity: WARNING
