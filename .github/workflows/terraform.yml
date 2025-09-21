@@ -1,0 +1,67 @@
+name: terraform plan/apply
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  terraform-fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
+
+  terraform-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init # This is usesd to initialize the working directory containing Terraform configuration files.
+        run: terraform init
+
+      - name: Terraform Validate # This checks the syntax and internal consistency of the configuration files.
+        run: terraform validate
+
+  terraform-plan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Plan # This will show what changes would be made.
+        run: terraform plan
+
+  terraform-apply:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' # Only run on pushes to main branch
+    runs-on: ubuntu-latest
+    environment:
+      name: production # Made a Environment in repo settings, set to require reviewers
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve      # After PR is reviewed and merged, this will apply the changes.
