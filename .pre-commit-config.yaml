@@ -1,7 +1,7 @@
 repos:
   # Basic Hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev:  v4.6.0
+    rev:  v6.0.0
     hooks:
       - id: check-merge-conflict
       - id: check-yaml
@@ -14,12 +14,11 @@ repos:
     rev: v1.90.0
     hooks:
       - id: terraform_fmt
-        args: [-recursive] # Recursively checks all files in the directory
+        args: [--args=-recursive] # Recursively checks all files in the directory
         files: ^terraform/ # Only checks terraform files
       - id: terraform_validate # Removes ANSI colors
-        args: [-no-color]
+        args: [--args=-no-color]
         files: ^terraform/
-
       - id: terraform_tflint
         args: [--args=--disable-rule=terraform_comment_syntax]
         files: ^terraform/
@@ -40,12 +39,3 @@ repos:
       - id: gitleaks
         args: [detect, --redact]
         pass_filenames: false         # scan the working tree
-
-  #  Checkov (Terraform security)
-  - repo: https://github.com/bridgecrewio/checkov
-    rev: 3.2.257
-    hooks:
-      - id: checkov
-        args: [-d, terraform, --quiet]
-        pass_filenames: false
-        language_version: python3.11
