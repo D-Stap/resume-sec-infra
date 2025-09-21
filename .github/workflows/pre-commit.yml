@@ -31,7 +31,8 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
+      - uses: terraform-linters/setup-tflint@v4
+        with: { tflint_version: latest }
+
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
-
-      - run: python my_script.py
