@@ -4,7 +4,6 @@ on:
   pull_request:
   push:
     branches:
-    branches: 
       - main
 
 permissions:
@@ -29,6 +28,9 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+
+      - uses: terraform-linters/setup-tflint@v4
+        with: { tflint_version: latest }
 
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
