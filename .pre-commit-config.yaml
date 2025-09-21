@@ -19,7 +19,6 @@ repos:
       - id: terraform_validate # Removes ANSI colors
         args: [--args=-no-color]
         files: ^terraform/
-
       - id: terraform_tflint
         args: [--args=--disable-rule=terraform_comment_syntax]
         files: ^terraform/
@@ -48,4 +47,4 @@ repos:
       - id: checkov
         args: [-d, terraform, --quiet]
         pass_filenames: false
-        language_version: python3.11
+      
