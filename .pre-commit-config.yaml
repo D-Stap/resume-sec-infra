@@ -28,8 +28,8 @@ repos:
     rev: v1.92.0
     hooks:
       - id: semgrep
-        args: [--config, p/ci, --error, --timeout, "120"] # Runs default configuration and blocks commit if failed. timesout after 120s
-        pass_filenames: true          # scan only staged files
+        args: [--config, .semgrep.yml, --error, --timeout, "120"] # Use custom config, block on error, scan all files
+        pass_filenames: false         # scan all files, not just staged
 
   #  Gitleaks (secrets)
 
