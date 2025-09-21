@@ -1,0 +1,43 @@
+name: Security Scans
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+permissions:
+    contents: read
+jobs:
+ semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Semgrep
+        run: semgrep --config .semgrep.yml --error --json > semgrep-report.json
+      - name: Upload Semgrep Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: semgrep-report
+          path: semgrep-report.json
+
+ gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Gitleaks
+        run: gitleaks detect --source . --report-format json --report-path gitleaks-report.json
+      - name: Upload Gitleaks Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: gitleaks-report
+          path: gitleaks-report.json
+ checkov:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Checkov
+        run: checkov --directory terraform --output json > checkov-report.json
+      - name: Upload Checkov Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkov-report
+          path: checkov-report.json
