@@ -3,32 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Delivery</title>
+			<!--  Google Fonts for main text -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+			<!--  Font Awesome for icons if I want them -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<style>
-	.navbar {
-		background: #222;
-		padding: 10px 0;
-		text-align: center;
-	}
-	.navbar a {
-		color: #fff;
-		text-decoration: none;
-		margin: 0 20px;
-		font-weight: bold;
-		font-size: 1.1em;
-		transition: color 0.2s;
-	}
-	.navbar a:hover {
-		color: #4CAF50;
-	}
+		body { font-family: 'Roboto', sans-serif; background: #f5f6fa; margin: 0; padding: 0; }
+		.navbar { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; padding: 0 40px; }
+		.navbar a { color: #222; text-decoration: none; margin: 0 20px; font-weight: 500; font-size: 1.1em; padding: 20px 0; transition: color 0.2s; }
+		.navbar a:hover { color: #4CAF50; }
+				/*  Change the header background image here if I want a new look. Just swap the URL. */
+			.header-bg { background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat; height: 180px; position: relative; }
+		.page-title { text-align: center; margin: -60px 0 32px 0; font-size: 2.2em; font-weight: 700; color: #333; }
 	</style>
 </head>
 <body>
-	<nav class="navbar">
-		<a href="index.html">Resume</a>
-		<a href="projects.html">Projects</a>
-		<a href="docs.html">Docs</a>
-		<a href="delivery.html">Delivery</a>
-	</nav>
-	<h1>Delivery</h1>
+			<!--  Nav bar: add/remove tabs or change link names here -->
+		<nav class="navbar">
+			<a href="index.html">Resume</a>
+			<a href="projects.html">Projects</a>
+			<a href="docs.html">Docs</a>
+			<a href="delivery.html">Delivery</a>
+		</nav>
+			<!--  This is the header image section -->
+		<div class="header-bg"></div>
+			<!--  Page title: just change the text below if I want -->
+		<div class="page-title">Delivery</div>
+			<!--  Main content: put my delivery info/sections here -->
 </body>
 </html>
