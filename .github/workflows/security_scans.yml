@@ -15,6 +15,7 @@ jobs:
         run: pip install semgrep
       - name: Run Semgrep
         run: semgrep --config .semgrep.yml --error --json > semgrep-report.json # runs custom config, blocks on error, outputs json report
+
       - name: Upload Semgrep Report
         uses: actions/upload-artifact@v4
         with:
