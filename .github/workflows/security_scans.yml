@@ -25,10 +25,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Gitleaks
-        run: |
-          wget -O gitleaks.tar.gz https://github.com/gitleaks/gitleaks/releases/download/v8.18.4/gitleaks-linux-amd64.tar.gz
-          sudo mv gitleaks /usr/local/bin/gitleaks
       - name: Run Gitleaks
         run: gitleaks detect --source . --report-format json --report-path gitleaks-report.json
       - name: Upload Gitleaks Report
