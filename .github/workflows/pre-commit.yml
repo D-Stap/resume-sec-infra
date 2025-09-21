@@ -24,12 +24,11 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.13' 
-
+          python-version: '3.13'
+          
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
-
-      - run: python my_script.py  
+   
