@@ -22,13 +22,12 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Setup Python
-        uses: actions/setup-python@v3.x
-      
+        uses: actions/setup-python@v3.11
+        
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.1
         with:
-          extra_args: --all-files 
-
+        extra_args: --all-files 
