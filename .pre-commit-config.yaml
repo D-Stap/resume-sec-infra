@@ -39,4 +39,3 @@ repos:
       - id: gitleaks
         args: [detect, --redact]
         pass_filenames: false         # scan the working tree
-        
