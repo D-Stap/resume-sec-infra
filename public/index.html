@@ -2,56 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Cloudfolio</title>
+  <title>Resume Site</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(180deg, #0a1a2f 0%, #1e3557 100%);
+      background: #f5f6fa;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
     .navbar {
-      background: #222;
-      padding: 10px 0;
-      text-align: center;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+      border-bottom: 1px solid #e0e6f0;
     }
     .navbar a {
-      color: #fff;
+      color: #223;
       text-decoration: none;
       margin: 0 20px;
-      font-weight: bold;
+      font-weight: 500;
       font-size: 1.1em;
+      padding: 20px 0;
       transition: color 0.2s;
+      letter-spacing: 0.2px;
     }
     .navbar a:hover {
       color: #4CAF50;
     }
     .header-bg {
-      background: url('https://png.pngtree.com/background/20230619/original/pngtree-website-banner-featuring-3d-cloud-computing-technology-render-picture-image_3761722.jpg') center/cover no-repeat;
-      height: 260px;
+      background: linear-gradient(0deg,rgba(10,26,47,0.60),rgba(30,53,87,0.50)), url('https://somosagility.com.br/wp-content/uploads/2022/03/cdfasfacloudsec.jpg') center/cover no-repeat;
+      height: 200px;
       position: relative;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
     }
     .main-content {
-      background: linear-gradient(180deg, #0a1a2f 0%, #1e3557 100%);
-      border-radius: 0 0 24px 24px;
+      background: #fff;
+      border-radius: 24px;
       max-width: 900px;
       margin: -60px auto 0 auto;
       box-shadow: 0 4px 24px rgba(0,0,0,0.10);
       padding: 40px 32px 32px 32px;
-      color: #fff;
+      color: #223;
       position: relative;
       z-index: 2;
+      text-align: center;
+    }
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #fff;
+      margin-top: -100px;
+      margin-bottom: 18px;
+      background: #eee;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     .my-name {
-      color: #fff;
+      color: #223;
       font-size: 2.5em;
       font-weight: 700;
       margin-bottom: 8px;
       text-align: center;
       letter-spacing: 1px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     .my-title {
       color: #4CAF50;
@@ -61,16 +88,19 @@
       margin-bottom: 24px;
     }
     .about-me {
-      background: rgba(255,255,255,0.07);
+      background: #f7faff;
       border-radius: 12px;
       padding: 24px;
       margin-bottom: 32px;
-      color: #e0e6f0;
+      color: #223;
       font-size: 1.1em;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: inline-block;
+      max-width: 90%;
     }
   </style>
 </head>
+<!-- ...existing code... -->
 <body>
   <nav class="navbar">
     <a href="index.html">Home</a>
@@ -78,17 +108,36 @@
     <a href="projects.html">GitHub Projects</a>
     <a href="docs.html">Documentation</a>
   </nav>
-  <div class="header-bg"></div>
-  <div class="main-content">
-    <div style="display: flex; flex-direction: column; align-items: center;">
-      <!-- Headshot placeholder -->
-      <img src="assets/headshot.jpg" alt="Headshot" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #fff;background:#eee;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.12);">
-      <div class="my-name">Davan Stapleton</div>
-      <div class="my-title">Cloud Security Analyst</div>
-    </div>
-    <div class="about-me">
+  <div class="header-bg" style="position: relative;"></div>
+  <div class="page-title" style="text-align:center; margin:-60px 0 32px 0; font-size:2.2em; font-weight:700; color:#223;">Welcome</div>
+  <div style="max-width:760px; margin:36px auto 0 auto; background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); padding:40px 32px 32px 32px; text-align:center;">
+    <div class="profile-pic" style="margin: 0 auto 18px auto; background: #eee;">Headshot</div>
+    <div class="my-name" style="color:#223; font-size:2.1em; font-weight:700; margin-bottom:8px;">Davan Stapleton</div>
+    <div class="my-title" style="color:#4CAF50; font-size:1.15em; font-weight:500; margin-bottom:24px;">Cloud Security Analyst</div>
+    <div class="about-me" style="background:#f7faff; border-radius:12px; padding:24px; margin-bottom:0; color:#223; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.04); display:inline-block; max-width:90%;">
       Hi, I'm Davan Stapleton, a passionate Cloud Security Analyst with a focus on building secure, scalable, and resilient cloud infrastructure. I love automating security, integrating DevSecOps, and helping teams deliver with confidence. Welcome to my professional portfolio!
     </div>
-    <!-- Add more content here if needed -->
+  </div>
+  <div class="docs-board-container" style="display:flex; gap:36px; justify-content:center; align-items:flex-start; margin:48px auto 0 auto; max-width:1100px; padding-bottom:48px;">
+    <div class="docs-board-column" style="background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); min-width:340px; max-width:440px; flex:1 1 340px; display:flex; flex-direction:column; align-items:flex-start; position:relative; border-left:6px solid #1e3557; padding:40px 32px 32px 32px;">
+      <div class="docs-column-title" style="font-size:1.35em; font-weight:700; color:#2a3a5a; margin-bottom:10px; display:flex; align-items:center;"><i class="fa fa-user" style="color:#1e3557; margin-right:10px;"></i>About Me</div>
+      <div class="docs-box" style="background:#f7faff; border-radius:12px; box-shadow:0 1px 6px rgba(0,0,0,0.07); padding:18px 14px 14px 14px; color:#2a3a5a; display:flex; flex-direction:column; align-items:flex-start; min-height:80px; border:1px solid #e0e6f6;">
+        <div class="docs-title" style="font-size:1.08em; font-weight:600; margin-bottom:6px; color:#2a3a5a;">Professional Focus</div>
+        <div class="docs-desc" style="font-size:0.98em; color:#4b5a6a;">Cloud security, automation, and resilient infrastructure. I help teams deliver with confidence.</div>
+        <a href="resume.html" style="margin-top:10px; align-self:flex-start; background:linear-gradient(90deg,#1e3557 0%,#2684FF 100%); color:#f3f7fa; font-weight:400; font-size:0.97em; padding:6px 15px; border-radius:6px; text-decoration:none; box-shadow:0 1px 3px rgba(38,132,255,0.06); transition:background 0.2s, box-shadow 0.2s; display:inline-flex; align-items:center; gap:6px;">
+          <i class="fa fa-user"></i>View Resume
+        </a>
+      </div>
+    </div>
+    <div class="docs-board-column" style="background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); min-width:340px; max-width:440px; flex:1 1 340px; display:flex; flex-direction:column; align-items:flex-start; position:relative; border-left:6px solid #1e3557; padding:40px 32px 32px 32px;">
+      <div class="docs-column-title" style="font-size:1.35em; font-weight:700; color:#2a3a5a; margin-bottom:10px; display:flex; align-items:center;"><i class="fa fa-briefcase" style="color:#1e3557; margin-right:10px;"></i>Portfolio</div>
+      <div class="docs-box" style="background:#f7faff; border-radius:12px; box-shadow:0 1px 6px rgba(0,0,0,0.07); padding:18px 14px 14px 14px; color:#2a3a5a; display:flex; flex-direction:column; align-items:flex-start; min-height:80px; border:1px solid #e0e6f6;">
+        <div class="docs-title" style="font-size:1.08em; font-weight:600; margin-bottom:6px; color:#2a3a5a;">See My Projects</div>
+        <div class="docs-desc" style="font-size:0.98em; color:#4b5a6a;">Explore my GitHub projects and documentation for more details on my work and learning journey.</div>
+        <a href="projects.html" style="margin-top:10px; align-self:flex-start; background:linear-gradient(90deg,#1e3557 0%,#2684FF 100%); color:#f3f7fa; font-weight:400; font-size:0.97em; padding:6px 15px; border-radius:6px; text-decoration:none; box-shadow:0 1px 3px rgba(38,132,255,0.06); transition:background 0.2s, box-shadow 0.2s; display:inline-flex; align-items:center; gap:6px;">
+          <i class="fa fa-briefcase"></i>View Projects
+        </a>
+      </div>
+    </div>
   </div>
 </body>
