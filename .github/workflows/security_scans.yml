@@ -25,6 +25,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install Gitleaks
+        run: |
+          wget -O gitleaks.tar.gz https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz
+          tar -xvf gitleaks.tar.gz
+          sudo mv gitleaks /usr/local/bin/gitleaks
       - name: Run Gitleaks
         run: gitleaks detect --source . --report-format json --report-path gitleaks-report.json
       - name: Upload Gitleaks Report
@@ -36,6 +41,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Install Checkov
+        run: pip install checkov
       - name: Run Checkov
         run: checkov --directory terraform --output json > checkov-report.json
       - name: Upload Checkov Report
