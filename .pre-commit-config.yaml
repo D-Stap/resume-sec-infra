@@ -39,4 +39,12 @@ repos:
       - id: gitleaks
         args: [detect, --redact]
         pass_filenames: false         # scan the working tree
-        
+
+  #  Checkov (Terraform security)
+  - repo: https://github.com/bridgecrewio/checkov
+    rev: 3.2.257
+    hooks:
+      - id: checkov
+        args: [-d, terraform, --quiet]
+        pass_filenames: false
+      
