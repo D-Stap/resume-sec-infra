@@ -1,3 +1,4 @@
+    <!-- Removed misplaced .download-btn CSS from above DOCTYPE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,32 +9,150 @@
   <!--  Font Awesome for icons if I want them -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { font-family: 'Roboto', sans-serif; background: #f5f6fa; margin: 0; padding: 0; }
-    .navbar { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; padding: 0 40px; }
-    .navbar a { color: #222; text-decoration: none; margin: 0 20px; font-weight: 500; font-size: 1.1em; padding: 20px 0; transition: color 0.2s; }
-    .navbar a:hover { color: #4CAF50; }
-    /*  Change the header background image here if I want a new look. Just swap the URL. */
-    .header-bg { background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat; height: 180px; position: relative; }
-    .page-title { text-align: center; margin: -60px 0 32px 0; font-size: 2.2em; font-weight: 700; color: #333; }
-    .pdf-viewer { display: flex; justify-content: center; margin-top: 32px; }
-    .pdf-viewer iframe { width: 80vw; height: 80vh; border: none; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #fff; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #e0e6f6 0%, #c2d7f2 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .navbar {
+      background: #222;
+      padding: 14px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 24px;
+      font-weight: 500;
+      font-size: 1.08em;
+      transition: color 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .navbar a:hover {
+      color: #4CAF50;
+    }
+    .header-bg {
+      background: url('https://png.pngtree.com/background/20230619/original/pngtree-website-banner-featuring-3d-cloud-computing-technology-render-picture-image_3761722.jpg') center/cover no-repeat;
+      height: 180px;
+      position: relative;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .page-title {
+      position: absolute;
+      left: 50%;
+      top: 140px;
+      transform: translateX(-50%);
+      z-index: 2;
+      text-align: center;
+      font-size: 2em;
+      font-weight: 700;
+      color: #2a3a5a;
+      letter-spacing: 0.5px;
+      background: rgba(255,255,255,0.92);
+      display: inline-block;
+      padding: 8px 32px;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    }
+    .resume-card {
+      max-width: 900px;
+      margin: 32px auto 0 auto;
+      background: rgba(255,255,255,0.97);
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .my-name {
+      color: #2a3a5a;
+      font-size: 2.1em;
+      font-weight: 700;
+      margin-bottom: 8px;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .my-title {
+      color: #4CAF50;
+      font-size: 1.18em;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .about-me {
+      background: rgba(240,245,255,0.18);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 32px;
+      color: #4b5a6a;
+      font-size: 1.08em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .pdf-viewer {
+      display: flex;
+      justify-content: center;
+      margin-top: 16px;
+      width: 100%;
+    }
+    .pdf-viewer iframe {
+      width: 100%;
+      max-width: 700px;
+      height: 80vh;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background: #e0e6f6;
+      border-radius: 10px;
+    }
+    .download-btn {
+      margin-top: 18px;
+      display: inline-block;
+      background: linear-gradient(90deg, #4CAF50 0%, #388e3c 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.08em;
+      padding: 10px 28px;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(76,175,80,0.08);
+      text-decoration: none;
+      transition: background 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .download-btn:hover {
+      background: linear-gradient(90deg, #388e3c 0%, #4CAF50 100%);
+      box-shadow: 0 4px 16px rgba(76,175,80,0.16);
+    }
   </style>
 </head>
 <body>
-  <!--  Nav bar: add/remove tabs or change link names here -->
   <nav class="navbar">
-    <a href="index.html">Resume</a>
-    <a href="projects.html">Projects</a>
-    <a href="docs.html">Docs</a>
-    <a href="delivery.html">Delivery</a>
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="projects.html">GitHub Projects</a>
+    <a href="docs.html">Documentation</a>
   </nav>
-  <!--  This is the header image section -->
-  <div class="header-bg"></div>
-  <!--  Page title: just change the text below if I want -->
-  <div class="page-title">Resume</div>
-  <!--  PDF Viewer: change the src below if I update my resume file -->
-  <div class="pdf-viewer">
-    <iframe src="assets/resume.pdf"></iframe>
+  <div class="header-bg" style="position: relative;">
+    <div class="page-title">Resume</div>
+  </div>
+  <div class="resume-card">
+    <div class="my-name">Davan Stapleton</div>
+    <div class="my-title">Cloud Security Analyst</div>
+    <div class="about-me">
+      Hi, I'm Davan Stapleton, a passionate Cloud Security Analyst with a focus on building secure, scalable, and resilient cloud infrastructure. I love automating security, integrating DevSecOps, and helping teams deliver with confidence. Welcome to my professional portfolio!
+    </div>
+    <div class="pdf-viewer">
+      <iframe src="assets/resume.pdf"></iframe>
+    </div>
+    <a class="download-btn" href="assets/resume.pdf" download>
+      <i class="fa fa-download" style="margin-right:8px;"></i>Download Resume (PDF)
+    </a>
   </div>
 </body>
 </html>

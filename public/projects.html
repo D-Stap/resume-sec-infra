@@ -7,28 +7,211 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 			<!--  Font Awesome for icons if I want them -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<style>
-		body { font-family: 'Roboto', sans-serif; background: #f5f6fa; margin: 0; padding: 0; }
-		.navbar { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; padding: 0 40px; }
-		.navbar a { color: #222; text-decoration: none; margin: 0 20px; font-weight: 500; font-size: 1.1em; padding: 20px 0; transition: color 0.2s; }
-		.navbar a:hover { color: #4CAF50; }
-				/*  Change the header background image here if I want a new look. Just swap the URL. */
-			.header-bg { background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat; height: 180px; position: relative; }
-		.page-title { text-align: center; margin: -60px 0 32px 0; font-size: 2.2em; font-weight: 700; color: #333; }
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(120deg, #e0e6f6 0%, #c2d7f2 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .navbar {
+      background: #222;
+      padding: 14px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 24px;
+      font-weight: 500;
+      font-size: 1.08em;
+      transition: color 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .navbar a:hover {
+      color: #4CAF50;
+    }
+    .board-container {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 0 auto;
+      max-width: 1400px;
+      padding: 32px 0 48px 0;
+    }
+    .board-column {
+      background: rgba(255,255,255,0.85);
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      min-width: 220px;
+      max-width: 320px;
+      flex: 1 1 220px;
+      padding: 18px 14px 18px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .column-title {
+      font-size: 1.18em;
+      font-weight: 700;
+      color: #2a3a5a;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+      text-align: left;
+    }
+    .project-box {
+      background: #f7faff;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+      padding: 18px 14px 14px 14px;
+      color: #2a3a5a;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 80px;
+      border: 1px solid #e0e6f6;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .project-box:hover {
+      box-shadow: 0 4px 16px rgba(76,175,80,0.12);
+      border-color: #4CAF50;
+    }
+    .project-title {
+      font-size: 1.08em;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #2a3a5a;
+    }
+    .project-desc {
+      font-size: 0.98em;
+      color: #4b5a6a;
+    }
+    .project-box.empty {
+      opacity: 0.7;
+      font-style: italic;
+      text-align: center;
+      align-items: center;
+      color: #888;
+    }
+    /* (me) Use the same background image as index.html for consistency */
+    .header-bg {
+      background: url('https://png.pngtree.com/background/20230619/original/pngtree-website-banner-featuring-3d-cloud-computing-technology-render-picture-image_3761722.jpg') center/cover no-repeat;
+      height: 180px;
+      position: relative;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .page-title {
+      position: absolute;
+      left: 50%;
+      top: 140px;
+      transform: translateX(-50%);
+      z-index: 2;
+      text-align: center;
+      font-size: 2em;
+      font-weight: 700;
+      color: #2a3a5a;
+      letter-spacing: 0.5px;
+      background: rgba(255,255,255,0.92);
+      display: inline-block;
+      padding: 8px 32px;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    }
+  </style>
 	</style>
 </head>
 <body>
-			<!--  Nav bar: add/remove tabs or change link names here -->
-		<nav class="navbar">
-			<a href="index.html">Resume</a>
-			<a href="projects.html">Projects</a>
-			<a href="docs.html">Docs</a>
-			<a href="delivery.html">Delivery</a>
-		</nav>
-			<!--  This is the header image section -->
-		<div class="header-bg"></div>
-			<!-- Page title: just change the text below if I want -->
-		<div class="page-title">Projects</div>
-			<!--Main content: put my project cards/sections here -->
-</body>
-</html>
+      <!-- (me) Nav bar: add/remove tabs or change link names here -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="resume.html">Resume</a>
+    <a href="projects.html">Projects</a>
+    <a href="docs.html">Documentation</a>
+  </nav>
+  <div class="header-bg" style="position: relative;">
+    <div class="page-title">Projects</div>
+  </div>
+  <!-- Intro Section (moved to top) -->
+  <div style="max-width:700px; margin:32px auto 0 auto; background:rgba(255,255,255,0.92); border-radius:16px; box-shadow:0 2px 12px rgba(0,0,0,0.07); padding:32px 36px; text-align:center;">
+    <h2 style="margin-top:0; color:#2a3a5a; font-size:1.4em; font-weight:700;">Welcome!</h2>
+    <p style="color:#4b5a6a; font-size:1.08em; margin-bottom:0;">I'm just starting my journey in cloud, security, and automation. This page will showcase my learning, experiments, and future projects. Check out my GitHub for code and updates!</p>
+  </div>
+  <!-- Subtle Profile Links Inline -->
+  <div style="width:100%; display:flex; justify-content:center; gap:32px; margin:24px 0 0 0;">
+    <a href="https://github.com/D-Stap" target="_blank" style="color:#2a3a5a; text-decoration:none; font-size:1em; display:flex; align-items:center; gap:7px; opacity:0.7;">
+      <i class="fab fa-github" style="font-size:1.25em; color:#222; border:1px solid #e0e6f6; border-radius:50%; padding:3px 6px;"></i>
+      <span>My GitHub Profile</span>
+    </a>
+    <a href="https://davantestapleton49.atlassian.net/jira/dashboards/10001" target="_blank" style="color:#0052cc; text-decoration:none; font-size:1em; display:flex; align-items:center; gap:7px; opacity:0.7;">
+      <i class="fab fa-jira" style="font-size:1.25em; color:#0052cc; border:1px solid #e0e6f6; border-radius:50%; padding:3px 6px;"></i>
+      <span>Jira Dashboard</span>
+    </a>
+  </div>
+  <div class="board-container">
+    <div class="board-column">
+      <div class="column-title">Learning & Exploration</div>
+      <div class="project-box">
+        <div class="project-title">Terraform AWS Infra</div>
+        <div class="project-desc">Infrastructure as Code using Terraform to build secure, scalable AWS environments with best practices.</div>
+        <div style="margin-top:10px;">
+          <a href="https://github.com/D-Stap/resume-sec-infra" target="_blank" style="color:#2a3a5a; text-decoration:none; font-size:0.97em; display:flex; align-items:center; gap:6px; opacity:0.8;">
+            <i class="fab fa-github" style="font-size:1.15em; color:#222; border:1px solid #e0e6f6; border-radius:50%; padding:2px 4px;"></i>
+            <span>GitHub Repo</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-box empty">More learning projects coming soon!</div>
+    </div>
+    <div class="board-column">
+      <div class="column-title">Security Foundations</div>
+      <div class="project-box">
+        <div class="project-title">Kubernetes Security</div>
+        <div class="project-desc">Implementing security policies and monitoring for Kubernetes clusters to ensure compliance and protection.</div>
+        <div style="margin-top:10px;">
+          <a href="https://github.com/D-Stap/k8s-security-demo" target="_blank" style="color:#2a3a5a; text-decoration:none; font-size:0.97em; display:flex; align-items:center; gap:6px; opacity:0.8;">
+            <i class="fab fa-github" style="font-size:1.15em; color:#222; border:1px solid #e0e6f6; border-radius:50%; padding:2px 4px;"></i>
+            <span>GitHub Repo</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-box">
+        <div class="project-title">Cloud Security Automation</div>
+        <div class="project-desc">Using tools like AWS Lambda and Python scripts to automate security tasks and incident response.</div>
+        <div style="margin-top:10px;">
+          <a href="https://github.com/D-Stap/cloud-security-automation" target="_blank" style="color:#2a3a5a; text-decoration:none; font-size:0.97em; display:flex; align-items:center; gap:6px; opacity:0.8;">
+            <i class="fab fa-github" style="font-size:1.15em; color:#222; border:1px solid #e0e6f6; border-radius:50%; padding:2px 4px;"></i>
+            <span>GitHub Repo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="board-column">
+      <div class="column-title">Automation & Tools</div>
+      <div class="project-box">
+        <div class="project-title">CI/CD Pipelines</div>
+        <div class="project-desc">Automating build, test, and deployment processes using Jenkins and GitHub Actions for faster delivery.</div>
+        <div style="margin-top:10px;">
+          <a href="https://github.com/D-Stap/cicd-pipeline-demo" target="_blank" style="color:#2a3a5a; text-decoration:none; font-size:0.97em; display:flex; align-items:center; gap:6px; opacity:0.8;">
+            <i class="fab fa-github" style="font-size:1.15em; color:#222; border:1px solid #e0e6f6; border-radius:50%; padding:2px 4px;"></i>
+            <span>GitHub Repo</span>
+          </a>
+        </div>
+      </div>
+      <div class="project-box">
+        <div class="project-title">Monitoring & Logging</div>
+        <div class="project-desc">Setting up centralized logging and monitoring with ELK Stack and Prometheus to enhance visibility.</div>
+        <div style="margin-top:10px;">
+          <a href="https://github.com/D-Stap/monitoring-logging-demo" target="_blank" style="color:#2a3a5a; text-decoration:none; font-size:0.97em; display:flex; align-items:center; gap:6px; opacity:0.8;">
+            <i class="fab fa-github" style="font-size:1.15em; color:#222; border:1px solid #e0e6f6; border-radius:50%; padding:2px 4px;"></i>
+            <span>GitHub Repo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
