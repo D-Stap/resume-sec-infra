@@ -9,26 +9,90 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<style>
 		body { font-family: 'Roboto', sans-serif; background: #f5f6fa; margin: 0; padding: 0; }
-		.navbar { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; justify-content: center; align-items: center; padding: 0 40px; }
-		.navbar a { color: #222; text-decoration: none; margin: 0 20px; font-weight: 500; font-size: 1.1em; padding: 20px 0; transition: color 0.2s; }
-		.navbar a:hover { color: #4CAF50; }
-				/*  Change the header background image here if I want a new look. Just swap the URL. */
-			.header-bg { background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat; height: 180px; position: relative; }
-		.page-title { text-align: center; margin: -60px 0 32px 0; font-size: 2.2em; font-weight: 700; color: #333; }
+			.navbar {
+				background: #fff;
+				box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 0 40px;
+				border-bottom: 1px solid #e0e6f0;
+			}
+			.navbar a {
+				color: #223;
+				text-decoration: none;
+				margin: 0 20px;
+				font-weight: 500;
+				font-size: 1.1em;
+				padding: 20px 0;
+				transition: color 0.2s;
+				letter-spacing: 0.2px;
+			}
+			.navbar a:hover {
+				color: #4CAF50;
+			}
+			.header-bg {
+				background: linear-gradient(0deg,rgba(10,26,47,0.60),rgba(30,53,87,0.50)), url('https://somosagility.com.br/wp-content/uploads/2022/03/cdfasfacloudsec.jpg') center/cover no-repeat;
+				height: 200px;
+				position: relative;
+				border-bottom-left-radius: 24px;
+				border-bottom-right-radius: 24px;
+				box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+			}
+			.page-title {
+				text-align: center;
+				margin: -60px 0 32px 0;
+				font-size: 2.2em;
+				font-weight: 700;
+				color: #223;
+			}
 	</style>
 </head>
 <body>
-			<!--  Nav bar: add/remove tabs or change link names here -->
-		<nav class="navbar">
-			<a href="index.html">Resume</a>
-			<a href="projects.html">Projects</a>
-			<a href="docs.html">Docs</a>
-			<a href="delivery.html">Delivery</a>
-		</nav>
-			<!--  This is the header image section -->
-		<div class="header-bg"></div>
-			<!--  Page title: just change the text below if I want -->
-		<div class="page-title">Docs</div>
-			<!--  Main content: put my docs/sections here -->
+	<nav class="navbar">
+		<a href="index.html">Home</a>
+		<a href="resume.html">Resume</a>
+		<a href="projects.html">GitHub Projects</a>
+		<a href="docs.html">Documentation</a>
+	</nav>
+	<div class="header-bg" style="position: relative;"></div>
+	<div class="page-title">Documentation</div>
+	<div style="max-width:760px; margin:36px auto 0 auto; background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); padding:40px 32px 32px 32px; text-align:center;">
+		<h2 style="margin-top:0; color:#2a3a5a; font-size:1.5em; font-weight:800; letter-spacing:0.5px;">Documentation Portal</h2>
+		<p style="color:#4b5a6a; font-size:1.12em; margin-bottom:0.5em;">Welcome to the professional documentation hub for cloud security and infrastructure projects. Here you'll find runbooks, architecture guides, and meeting notes. For full technical details and collaboration, visit the Confluence space below.</p>
+		<a href="https://davantestapleton49.atlassian.net/wiki/spaces/CSR/overview" target="_blank" style="margin-top:18px; display:inline-flex; align-items:center; background:linear-gradient(90deg,#1e3557 0%,#2684FF 100%); color:#f3f7fa; font-weight:500; font-size:1.04em; padding:8px 20px; border-radius:7px; text-decoration:none; box-shadow:0 1px 3px rgba(38,132,255,0.06); transition:background 0.2s, box-shadow 0.2s; gap:8px;">
+			<i class="fab fa-confluence" style="font-size:1.18em;"></i>Confluence Docs
+		</a>
+	</div>
+	<div class="docs-board-container" style="display:flex; gap:36px; justify-content:center; align-items:flex-start; margin:0 auto; max-width:1100px; padding:48px 0 48px 0;">
+		<div class="docs-board-column" style="background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); min-width:340px; max-width:440px; flex:1 1 340px; display:flex; flex-direction:column; align-items:flex-start; position:relative; border-left:6px solid #1e3557; padding:40px 32px 32px 32px;">
+		<div class="docs-column-title" style="font-size:1.35em; font-weight:700; color:#2a3a5a; margin-bottom:10px; display:flex; align-items:center;"><i class="fa fa-book" style="color:#1e3557; margin-right:10px;"></i>Runbooks</div>
+			<div class="docs-box" style="background:#f7faff; border-radius:12px; box-shadow:0 1px 6px rgba(0,0,0,0.07); padding:18px 14px 14px 14px; color:#2a3a5a; display:flex; flex-direction:column; align-items:flex-start; min-height:80px; border:1px solid #e0e6f6; margin-bottom:18px;">
+				<div class="docs-title" style="font-size:1.08em; font-weight:600; margin-bottom:6px; color:#2a3a5a;">Cloud Security Runbook</div>
+				<div class="docs-desc" style="font-size:0.98em; color:#4b5a6a;">Step-by-step guides for incident response, automation, and best practices in cloud environments.</div>
+			</div>
+			<div class="docs-box empty" style="opacity:0.7; font-style:italic; text-align:center; align-items:center; color:#888;">More runbooks coming soon!</div>
+		</div>
+		<div class="docs-board-column" style="background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); min-width:340px; max-width:440px; flex:1 1 340px; display:flex; flex-direction:column; align-items:flex-start; position:relative; border-left:6px solid #1e3557; padding:40px 32px 32px 32px;">
+		<div class="docs-column-title" style="font-size:1.35em; font-weight:700; color:#2a3a5a; margin-bottom:10px; display:flex; align-items:center;"><i class="fa fa-sitemap" style="color:#1e3557; margin-right:10px;"></i>Architecture</div>
+			<div class="docs-box" style="background:#f7faff; border-radius:12px; box-shadow:0 1px 6px rgba(0,0,0,0.07); padding:18px 14px 14px 14px; color:#2a3a5a; display:flex; flex-direction:column; align-items:flex-start; min-height:80px; border:1px solid #e0e6f6; margin-bottom:18px;">
+				<div class="docs-title" style="font-size:1.08em; font-weight:600; margin-bottom:6px; color:#2a3a5a;">Architecture Decisions</div>
+				<div class="docs-desc" style="font-size:0.98em; color:#4b5a6a;">Rationale, diagrams, and documentation for infrastructure and security architecture choices.</div>
+			</div>
+			<div class="docs-box" style="background:#f7faff; border-radius:12px; box-shadow:0 1px 6px rgba(0,0,0,0.07); padding:18px 14px 14px 14px; color:#2a3a5a; display:flex; flex-direction:column; align-items:flex-start; min-height:80px; border:1px solid #e0e6f6;">
+				<div class="docs-title" style="font-size:1.08em; font-weight:600; margin-bottom:6px; color:#2a3a5a;">How-To Guides</div>
+				<div class="docs-desc" style="font-size:0.98em; color:#4b5a6a;">Deployment, monitoring, and CI/CD setup instructions for secure cloud operations.</div>
+			</div>
+		</div>
+		<div class="docs-board-column" style="background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); min-width:340px; max-width:440px; flex:1 1 340px; display:flex; flex-direction:column; align-items:flex-start; position:relative; border-left:6px solid #1e3557; padding:40px 32px 32px 32px;">
+		<div class="docs-column-title" style="font-size:1.35em; font-weight:700; color:#2a3a5a; margin-bottom:10px; display:flex; align-items:center;"><i class="fa fa-users" style="color:#1e3557; margin-right:10px;"></i>Meetings & Notes</div>
+			<div class="docs-box" style="background:#f7faff; border-radius:12px; box-shadow:0 1px 6px rgba(0,0,0,0.07); padding:18px 14px 14px 14px; color:#2a3a5a; display:flex; flex-direction:column; align-items:flex-start; min-height:80px; border:1px solid #e0e6f6; margin-bottom:18px;">
+				<div class="docs-title" style="font-size:1.08em; font-weight:600; margin-bottom:6px; color:#2a3a5a;">Meeting Notes</div>
+				<div class="docs-desc" style="font-size:0.98em; color:#4b5a6a;">Key decisions, action items, and summaries from team meetings and technical reviews.</div>
+			</div>
+			<div class="docs-box empty" style="opacity:0.7; font-style:italic; text-align:center; align-items:center; color:#888;">More notes and docs soon!</div>
+		</div>
+	</div>
+	<div style="max-width:900px; margin:0 auto 32px auto; color:#4b5a6a; font-size:0.98em; text-align:center;">For the latest and most detailed documentation, visit my <a href="https://davantestapleton49.atlassian.net/wiki/spaces/CSR/overview" target="_blank" style="color:#1565c0; text-decoration:underline; font-weight:600;">Confluence space</a>.</div>
 </body>
 </html>

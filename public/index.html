@@ -11,277 +11,133 @@
       background: #f5f6fa;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
     .navbar {
       background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 0 40px;
+      border-bottom: 1px solid #e0e6f0;
     }
     .navbar a {
-      color: #222;
+      color: #223;
       text-decoration: none;
       margin: 0 20px;
       font-weight: 500;
       font-size: 1.1em;
       padding: 20px 0;
       transition: color 0.2s;
+      letter-spacing: 0.2px;
     }
     .navbar a:hover {
       color: #4CAF50;
     }
     .header-bg {
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      height: 260px;
+      background: linear-gradient(0deg,rgba(10,26,47,0.60),rgba(30,53,87,0.50)), url('https://somosagility.com.br/wp-content/uploads/2022/03/cdfasfacloudsec.jpg') center/cover no-repeat;
+      height: 200px;
       position: relative;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
     }
-    .profile-card {
+    .main-content {
       background: #fff;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      border-radius: 12px;
-      max-width: 600px;
-      margin: -100px auto 0 auto;
-      padding: 32px 32px 24px 32px;
-      text-align: center;
+      border-radius: 24px;
+      max-width: 900px;
+      margin: -60px auto 0 auto;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      padding: 40px 32px 32px 32px;
+      color: #223;
       position: relative;
       z-index: 2;
+      text-align: center;
     }
     .profile-pic {
-      width: 120px;
-      height: 120px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #fff;
-      margin-top: -80px;
-      margin-bottom: 16px;
+      border: 6px solid #fff;
+      margin-top: -100px;
+      margin-bottom: 18px;
       background: #eee;
-    }
-    .profile-card h2 {
-      margin: 0 0 8px 0;
-      font-size: 2em;
-      font-weight: 700;
-    }
-    .profile-card .subtitle {
-      color: #888;
       font-size: 1.1em;
-      margin-bottom: 16px;
-    }
-    .profile-card .btn-group {
-      margin: 16px 0 20px 0;
-    }
-    .profile-card .btn {
-      display: inline-block;
-      padding: 10px 24px;
-      margin: 0 8px;
-      border-radius: 4px;
-      border: none;
-      font-size: 1em;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.2s;
-      text-decoration: none;
-    }
-    .btn-download {
-      background: #4CAF50;
-      color: #fff;
-    }
-    .btn-download:hover {
-      background: #388e3c;
-    }
-    .btn-contact {
-      background: #2196F3;
-      color: #fff;
-    }
-    .btn-contact:hover {
-      background: #1769aa;
-    }
-    .profile-info {
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 40px;
-      margin: 20px 0 0 0;
-      flex-wrap: wrap;
+      color: #888;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-    .profile-info ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-    }
-    .profile-info li {
+    .my-name {
+      color: #223;
+      font-size: 2.5em;
+      font-weight: 700;
       margin-bottom: 8px;
-      color: #444;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-    .social-icons {
-      margin: 16px 0 0 0;
+    .my-title {
+      color: #4CAF50;
+      font-size: 1.3em;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 24px;
     }
-    .social-icons a {
-      color: #555;
-      margin: 0 8px;
-      font-size: 1.2em;
-      transition: color 0.2s;
-    }
-    .social-icons a:hover {
-      color: #2196F3;
-    }
-    .skills-section {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin: 48px 0 0 0;
-      flex-wrap: wrap;
-    }
-    .skills-box {
-      background: #fff;
-      border-radius: 10px;
+    .about-me {
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      color: #223;
+      font-size: 1.1em;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      padding: 24px 32px;
-      min-width: 260px;
-      max-width: 320px;
-    }
-    .skills-box h3 {
-      margin-top: 0;
-      font-size: 1.2em;
-      color: #333;
-      margin-bottom: 18px;
-    }
-    .skill {
-      margin-bottom: 18px;
-    }
-    .skill-label {
-      font-size: 1em;
-      color: #555;
-      margin-bottom: 4px;
-      display: block;
-    }
-    .progress-bar {
-      background: #eee;
-      border-radius: 8px;
-      height: 8px;
-      width: 100%;
-      margin-top: 2px;
-      position: relative;
-    }
-    .progress {
-      background: #4CAF50;
-      height: 8px;
-      border-radius: 8px;
-      position: absolute;
-      top: 0; left: 0;
+      display: inline-block;
+      max-width: 90%;
     }
   </style>
 </head>
-<style>
-.navbar {
-  background: #222;
-  padding: 10px 0;
-  text-align: center;
-}
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 20px;
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: color 0.2s;
-}
-.navbar a:hover {
-  color: #4CAF50;
-}
-</style>
-</head>
-<style>
-.navbar {
-  background: #222;
-  padding: 10px 0;
-  text-align: center;
-}
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 20px;
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: color 0.2s;
-}
-.navbar a:hover {
-  color: #4CAF50;
-}
-</style>
-</head>
+<!-- ...existing code... -->
 <body>
   <nav class="navbar">
-
     <a href="index.html">Home</a>
-    <a href="assets/resume.pdf" download>Resume</a>
+    <a href="resume.html">Resume</a>
     <a href="projects.html">GitHub Projects</a>
     <a href="docs.html">Documentation</a>
-    <a href="delivery.html">Deployments</a>
   </nav>
-  <div class="header-bg"></div>
-  <div class="profile-card">
-    <img class="profile-pic" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Picture">
-    <h2>Benjamin Sirge</h2>
-    <div class="subtitle">UI/UX Designer &amp; Front End Developer</div>
-    <div class="btn-group">
-      <a class="btn btn-download" href="assets/resume.pdf" download>Download CV</a>
-      <a class="btn btn-contact" href="mailto:benjaminsirge49@matresume.com">Contact</a>
-    </div>
-    <div class="profile-info">
-      <ul>
-        <li><strong>Age:</strong> 24</li>
-        <li><strong>Address:</strong> Glenlake St. Mays Landing, NJ 08330</li>
-        <li><strong>Email:</strong> benjaminsirge49@matresume.com</li>
-      </ul>
-      <ul>
-        <li><strong>Phone:</strong> +1 234 56 78 90</li>
-        <li><strong>Freelance:</strong> Available <i class="fa fa-check" style="color: #4CAF50;"></i></li>
-      </ul>
-    </div>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
+  <div class="header-bg" style="position: relative;"></div>
+  <div class="page-title" style="text-align:center; margin:-60px 0 32px 0; font-size:2.2em; font-weight:700; color:#223;">Welcome</div>
+  <div style="max-width:760px; margin:36px auto 0 auto; background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); padding:40px 32px 32px 32px; text-align:center;">
+    <div class="profile-pic" style="margin: 0 auto 18px auto; background: #eee;">Headshot</div>
+    <div class="my-name" style="color:#223; font-size:2.1em; font-weight:700; margin-bottom:8px;">Davan Stapleton</div>
+    <div class="my-title" style="color:#4CAF50; font-size:1.15em; font-weight:500; margin-bottom:24px;">Cloud Security Analyst</div>
+    <div class="about-me" style="background:#f7faff; border-radius:12px; padding:24px; margin-bottom:0; color:#223; font-size:1.1em; box-shadow:0 2px 8px rgba(0,0,0,0.04); display:inline-block; max-width:90%;">
+      Hi, I'm Davan Stapleton, a passionate Cloud Security Analyst with a focus on building secure, scalable, and resilient cloud infrastructure. I love automating security, integrating DevSecOps, and helping teams deliver with confidence. Welcome to my professional portfolio!
     </div>
   </div>
-  <div class="skills-section">
-    <div class="skills-box">
-      <h3>Technical Skills</h3>
-      <div class="skill">
-        <span class="skill-label">Photoshop CS</span>
-        <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
-      </div>
-      <div class="skill">
-        <span class="skill-label">Illustrator CS</span>
-        <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
-      </div>
-      <div class="skill">
-        <span class="skill-label">Sketch</span>
-        <div class="progress-bar"><div class="progress" style="width: 60%"></div></div>
+  <div class="docs-board-container" style="display:flex; gap:36px; justify-content:center; align-items:flex-start; margin:48px auto 0 auto; max-width:1100px; padding-bottom:48px;">
+    <div class="docs-board-column" style="background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); min-width:340px; max-width:440px; flex:1 1 340px; display:flex; flex-direction:column; align-items:flex-start; position:relative; border-left:6px solid #1e3557; padding:40px 32px 32px 32px;">
+      <div class="docs-column-title" style="font-size:1.35em; font-weight:700; color:#2a3a5a; margin-bottom:10px; display:flex; align-items:center;"><i class="fa fa-user" style="color:#1e3557; margin-right:10px;"></i>About Me</div>
+      <div class="docs-box" style="background:#f7faff; border-radius:12px; box-shadow:0 1px 6px rgba(0,0,0,0.07); padding:18px 14px 14px 14px; color:#2a3a5a; display:flex; flex-direction:column; align-items:flex-start; min-height:80px; border:1px solid #e0e6f6;">
+        <div class="docs-title" style="font-size:1.08em; font-weight:600; margin-bottom:6px; color:#2a3a5a;">Professional Focus</div>
+        <div class="docs-desc" style="font-size:0.98em; color:#4b5a6a;">Cloud security, automation, and resilient infrastructure. I help teams deliver with confidence.</div>
+        <a href="resume.html" style="margin-top:10px; align-self:flex-start; background:linear-gradient(90deg,#1e3557 0%,#2684FF 100%); color:#f3f7fa; font-weight:400; font-size:0.97em; padding:6px 15px; border-radius:6px; text-decoration:none; box-shadow:0 1px 3px rgba(38,132,255,0.06); transition:background 0.2s, box-shadow 0.2s; display:inline-flex; align-items:center; gap:6px;">
+          <i class="fa fa-user"></i>View Resume
+        </a>
       </div>
     </div>
-    <div class="skills-box">
-      <h3>Soft Skills</h3>
-      <div class="skill">
-        <span class="skill-label">Communication</span>
-        <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
-      </div>
-      <div class="skill">
-        <span class="skill-label">Language</span>
-        <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
-      </div>
-      <div class="skill">
-        <span class="skill-label">General Knowledge</span>
-        <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
+    <div class="docs-board-column" style="background:rgba(255,255,255,0.99); border-radius:24px; box-shadow:0 4px 24px rgba(0,0,0,0.10); min-width:340px; max-width:440px; flex:1 1 340px; display:flex; flex-direction:column; align-items:flex-start; position:relative; border-left:6px solid #1e3557; padding:40px 32px 32px 32px;">
+      <div class="docs-column-title" style="font-size:1.35em; font-weight:700; color:#2a3a5a; margin-bottom:10px; display:flex; align-items:center;"><i class="fa fa-briefcase" style="color:#1e3557; margin-right:10px;"></i>Portfolio</div>
+      <div class="docs-box" style="background:#f7faff; border-radius:12px; box-shadow:0 1px 6px rgba(0,0,0,0.07); padding:18px 14px 14px 14px; color:#2a3a5a; display:flex; flex-direction:column; align-items:flex-start; min-height:80px; border:1px solid #e0e6f6;">
+        <div class="docs-title" style="font-size:1.08em; font-weight:600; margin-bottom:6px; color:#2a3a5a;">See My Projects</div>
+        <div class="docs-desc" style="font-size:0.98em; color:#4b5a6a;">Explore my GitHub projects and documentation for more details on my work and learning journey.</div>
+        <a href="projects.html" style="margin-top:10px; align-self:flex-start; background:linear-gradient(90deg,#1e3557 0%,#2684FF 100%); color:#f3f7fa; font-weight:400; font-size:0.97em; padding:6px 15px; border-radius:6px; text-decoration:none; box-shadow:0 1px 3px rgba(38,132,255,0.06); transition:background 0.2s, box-shadow 0.2s; display:inline-flex; align-items:center; gap:6px;">
+          <i class="fa fa-briefcase"></i>View Projects
+        </a>
       </div>
     </div>
   </div>
-  <h1>Welcome to My Resume Site</h1>
-  <ul>
-  </ul>
 </body>
-</html>
